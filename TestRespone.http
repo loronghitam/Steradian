@@ -1,0 +1,38 @@
+### GET request to example server
+GET  http://127.0.0.1:8000/api/cars
+###
+### POST request cars
+POST  http://127.0.0.1:8000/api/cars
+Content-Type: multipart/form-data;
+
+
+{
+"id": 999,
+  "value": "content"
+}
+###
+
+### POST request cars
+POST  http://127.0.0.1:8000/api/orders
+Content-Type: application/json
+
+{
+    "dropoff_location": 1,
+    "dropoff_date": "2024-12-12",
+    "pickup_date" : "2024-12-12",
+    "pickup_location": 2,
+    "car_id" : "01jsngg7mgmrstnbtbvjacvrkz"
+}
+###
+### POST request cars
+POST  http://127.0.0.1:8000/api/orders
+Content-Type: application/json
+
+{
+    "dropoff_location": 1,
+    "dropoff_date": "2024-12-12",
+    "pickup_date" : "2024-12-12",
+    "pickup_location": 2,
+    "car_id" : "01jsngg7mgmrstnbtbvjacvrkz"
+}
+###
