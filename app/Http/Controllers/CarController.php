@@ -10,19 +10,8 @@ use Illuminate\Validation\ValidationException;
 
 class CarController extends Controller
 {
-    public function create(Request $request)
+    public function create(CarRequest $request)
     {
-        $rules = [
-            'car_name' => 'required|string',
-            'day_rate' => 'required|numeric',
-            'month_rate' => 'required|numeric',
-            'image' => 'required|image',
-        ];
-
-        $validator = Validator::make($request->all(), $rules);
-        if ($validator->fails()) {
-            return ResponseError(422, 'error', $validator->errors());
-        }
         try {
             $imagePath = uploadFile($request->file('image'), 'cars');
             $dataCar = Car::create([
