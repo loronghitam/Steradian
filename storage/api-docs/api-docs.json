@@ -1,0 +1,407 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Steradian",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/cars": {
+            "get": {
+                "tags": [
+                    "Cars"
+                ],
+                "summary": "Update a car",
+                "operationId": "10cce27ee893e8cfe6a56733aef79862",
+                "responses": {
+                    "200": {
+                        "description": "List car"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Cars"
+                ],
+                "summary": "Create a new car",
+                "operationId": "498ece5d68b39bbffb60eef53fb417ea",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "car_name",
+                                    "day_rate",
+                                    "month_rate",
+                                    "image"
+                                ],
+                                "properties": {
+                                    "car_name": {
+                                        "type": "string",
+                                        "example": "Toyota Camry"
+                                    },
+                                    "day_rate": {
+                                        "type": "string",
+                                        "example": "50"
+                                    },
+                                    "month_rate": {
+                                        "type": "string",
+                                        "example": "1000"
+                                    },
+                                    "image": {
+                                        "description": "Car image file",
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Car created successfully"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    }
+                }
+            }
+        },
+        "/api/cars/{id}": {
+            "get": {
+                "tags": [
+                    "Cars"
+                ],
+                "summary": "Update a car",
+                "operationId": "5f8f997ada3afa4d16988730160859de",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Id car's",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List car"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Cars"
+                ],
+                "summary": "Update a car",
+                "operationId": "802b64f09e484fbb1bb3817362d30cc9",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Id car's",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List car"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Cars"
+                ],
+                "summary": "Update a car",
+                "operationId": "067e985e39de9ca94c07247a147d93ca",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Id car's",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "car_name",
+                                    "day_rate",
+                                    "month_rate",
+                                    "image"
+                                ],
+                                "properties": {
+                                    "car_name": {
+                                        "type": "string",
+                                        "example": "Toyota Camry"
+                                    },
+                                    "day_rate": {
+                                        "type": "string",
+                                        "example": "50"
+                                    },
+                                    "month_rate": {
+                                        "type": "string",
+                                        "example": "1000"
+                                    },
+                                    "image": {
+                                        "description": "Car image file",
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Ok."
+                    },
+                    "404": {
+                        "description": "Data not found."
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "500": {
+                        "description": "Internal server error."
+                    }
+                }
+            }
+        },
+        "/api/orders": {
+            "get": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "List order.",
+                "operationId": "b20035ea428a4a9377c4a395600756ff",
+                "responses": {
+                    "200": {
+                        "description": "Ok."
+                    },
+                    "500": {
+                        "description": "Internal server error."
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "Create a new Order",
+                "operationId": "ea7f9f7ac84384bee1c0ea5239cfee15",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "dropoff_location",
+                                    "dropoff_date",
+                                    "pickup_date",
+                                    "pickup_location",
+                                    "car_id"
+                                ],
+                                "properties": {
+                                    "dropoff_location": {
+                                        "type": "string",
+                                        "example": "1"
+                                    },
+                                    "pickup_location": {
+                                        "type": "string",
+                                        "example": "2"
+                                    },
+                                    "dropoff_date": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2025-12-12"
+                                    },
+                                    "pickup_date": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2025-12-12"
+                                    },
+                                    "car_id": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "400": {
+                        "description": "Bad request."
+                    },
+                    "404": {
+                        "description": "Data not found."
+                    },
+                    "500": {
+                        "description": "Internal server error."
+                    }
+                }
+            }
+        },
+        "/api/orders/{id}": {
+            "get": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "Show order",
+                "operationId": "f9a4f453c98df2783845b7cc1f518d7f",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Id order",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok."
+                    },
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "Delete order",
+                "operationId": "303a7b797887b66c7790c4c187b54790",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Id Order",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok."
+                    },
+                    "404": {
+                        "description": "Data not found."
+                    },
+                    "500": {
+                        "description": "Internal server error."
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Orders"
+                ],
+                "summary": "Update order",
+                "operationId": "3b968f2d541a149384696b487e339af7",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "ID order",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "dropoff_location",
+                                    "dropoff_date",
+                                    "pickup_date",
+                                    "pickup_location",
+                                    "car_id"
+                                ],
+                                "properties": {
+                                    "dropoff_location": {
+                                        "type": "string",
+                                        "example": "Toyota Camry"
+                                    },
+                                    "dropoff_date": {
+                                        "type": "string",
+                                        "example": "50"
+                                    },
+                                    "pickup_date": {
+                                        "type": "string",
+                                        "example": "2"
+                                    },
+                                    "pickup_location": {
+                                        "type": "string",
+                                        "example": "1"
+                                    },
+                                    "car_id": {
+                                        "type": "string",
+                                        "example": "123"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Ok."
+                    },
+                    "404": {
+                        "description": "Data not fount."
+                    },
+                    "400": {
+                        "description": "Bad request."
+                    },
+                    "500": {
+                        "description": "Internal server error."
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Cars",
+            "description": "Cars"
+        },
+        {
+            "name": "Orders",
+            "description": "Orders"
+        }
+    ]
+}
