@@ -127,7 +127,7 @@ class CarController extends Controller
      * @OA\Get(
      *     path="/api/cars",
      *     tags={"Cars"},
-     *     summary="Update a car",
+     *     summary="Get all data car",
      *     @OA\Response(
      *         response=200,
      *         description="List car"
