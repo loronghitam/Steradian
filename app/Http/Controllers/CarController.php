@@ -146,7 +146,7 @@ class CarController extends Controller
             return ResponseError(401, 'Error', 'Error get users data');
         }
 //        return ResponseSuccess(200, 'Success', 'Success Get Users Data', $data);
-        return ResponseSuccess(200, 'Success', 'Success Get Users Data', new CarResource($data));
+        return ResponseSuccess(200, 'Success', 'Success Get Users Data', $data);
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Car;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,12 @@ class OrderFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'pickup_location' => '',
+            'dropoff_location' => '',
+            'dropoff_date' => '',
+            'order_date' => '',
+            'pickup_date' => '',
+            'car_id' => Car::get()->random()->id
         ];
     }
 }

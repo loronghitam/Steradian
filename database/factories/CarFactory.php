@@ -17,7 +17,10 @@ class CarFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'car_name' => fake()->name,
+            'day_rate' => fake()->numberBetween(300000, 500000),
+            'month_rate' => fake()->numberBetween(6000000, 15000000),
+            'image' => fake()->image
         ];
     }
 }
