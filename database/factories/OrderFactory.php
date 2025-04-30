@@ -18,11 +18,11 @@ class OrderFactory extends Factory
     public function definition(): array
     {
         return [
-            'pickup_location' => '',
-            'dropoff_location' => '',
-            'dropoff_date' => '',
-            'order_date' => '',
-            'pickup_date' => '',
+            'pickup_location' => fake()->randomDigitNotZero(),
+            'dropoff_location' => fake()->randomDigitNotZero(),
+            'dropoff_date' => fake()->date(),
+            'order_date' => fake()->date,
+            'pickup_date' => fake()->date,
             'car_id' => Car::get()->random()->id
         ];
     }
